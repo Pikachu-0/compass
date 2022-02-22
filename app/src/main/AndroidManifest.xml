@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.compass">
+
+    <!--if your app requests app permissions, you must declare these permissions in your app's manifest file-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Compass">
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--Declares a service (a Service subclass) as one of the application's components.
+        Unlike activities, services lack a visual user interface. They're used to implement
+        long-running background operations or a rich communications API that can be called by
+        other applications. All services must be represented by <service> elements in the
+        manifest file. Any that are not declared there will not be seen by the system and will
+        never be run.-->
+
+        <!--TODO: Esto que hace? -->
+        <service android:name=".FloatingWindow"
+            tools:ignore="Instantiatable" />
+    </application>
+
+</manifest>
