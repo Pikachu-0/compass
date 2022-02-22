@@ -59,7 +59,7 @@ class FloatingWindow : Service() {
         //Compass
         compassLogic = CompassLogic(
             getSystemService(Context.SENSOR_SERVICE) as SensorManager,
-            floatView.findViewById<FloatingCompassView>(R.id.compass_view_float)
+            compassViewFloat
         )
 
         windowManager.addView(floatView, floatWindowLayoutParams)
