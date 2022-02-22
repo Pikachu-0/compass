@@ -1,6 +1,6 @@
 # Compass
 
-Las referencias a bookmarks empiezan por #. Los bookmarks se listan con shift+F11
+This project is under development for learning purpose
 
 ***W/ MAIN SCREEN***
 
