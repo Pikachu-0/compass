@@ -16,10 +16,8 @@ class FloatingCompassView @JvmOverloads constructor(
 
         val paint = Paint()
         val paint2 = Paint()
+
         paint.color = Color.WHITE
-
-
-
         paint.textSize = 50f
         paint2.color = Color.DKGRAY
 
@@ -34,7 +32,6 @@ class FloatingCompassView @JvmOverloads constructor(
         canvas?.drawText("W", width/2f  - 120 - 40, height/2f + 15, paint)
 
         //Log.v("compasslog", "height ${canvas?.height}")
-
 
         //TODO: What reference width and height?
         //TODO: Modify CompassView avoiding @Jvm...

@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             binding.constraintLayoutView
         )
 
+        supportActionBar?.hide() //hide action bar
         setContentView(binding.root)
 
         //Si hay un servicio lo para, si no hay no para nada y continua
@@ -100,7 +101,7 @@ class MainActivity : AppCompatActivity() {
     //COMPASS LOCATION
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         val viewLocation = intArrayOf(2,3)
-        binding.textView.getLocationOnScreen(viewLocation)
+        binding.compassView.getLocationOnScreen(viewLocation)
         Log.v("compasslog","compass loc:${viewLocation[0]}, ${viewLocation[1]}")
     }
 

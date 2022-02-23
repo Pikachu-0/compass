@@ -41,7 +41,7 @@ class FloatingWindow : Service() {
 
         floatView = inflater.inflate(R.layout.floating_layout, null) as ViewGroup
 
-        compassViewFloat = floatView.findViewById<FloatingCompassView>(R.id.compass_view_float)
+        compassViewFloat = floatView.findViewById(R.id.compass_view_float)
 
         floatWindowLayoutParams = WindowManager.LayoutParams(
             400,
@@ -51,10 +51,12 @@ class FloatingWindow : Service() {
             PixelFormat.TRANSLUCENT
         )
 
-        //TODO: estas 3 lineas no parece que hagan nada
-        //floatWindowLayoutParams.gravity = Gravity.CENTER
-        //floatWindowLayoutParams.x = 0
-        //floatWindowLayoutParams.y = 200
+        //The default gravity is UNSPECIFIED_GRAVITY, which is treated by FrameLayout as Gravity.TOP | Gravity.START
+        //The gravity TOP fix the X value and can't be changed. The same happens with gravity START, it fix the Y value and can't be changed.
+        //TODO: Why the floating window has an X offset?
+        floatWindowLayoutParams.gravity = Gravity.CENTER
+        //This modifies the Y coordinate but something weird happen when trying to drag
+        //floatWindowLayoutParams.y = 1247
 
         //Compass
         compassLogic = CompassLogic(
